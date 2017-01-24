@@ -28,5 +28,25 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
             return restResponse.Data;
         }
+
+        public NotificationCancelResult Cancel(NotificationCancelOptions options)
+        {
+            RestRequest restRequest = new RestRequest("notifications/" + options.NotificationId, Method.DELETE);
+
+            restRequest.AddHeader("Authorization", string.Format("Basic {0}", base.ApiKey));
+
+            restRequest.AddParameter("app_id", options.AppId);
+
+            restRequest.RequestFormat = DataFormat.Json;
+
+            IRestResponse<NotificationCancelResult> restResponse = base.RestClient.Execute<NotificationCancelResult>(restRequest);
+
+            if (restResponse.ErrorException != null)
+            {
+                throw restResponse.ErrorException;
+            }
+
+            return restResponse.Data;
+        }
     }
 }

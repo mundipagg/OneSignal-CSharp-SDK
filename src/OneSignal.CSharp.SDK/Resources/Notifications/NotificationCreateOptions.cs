@@ -65,6 +65,18 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("included_segments")]
         public IList<string> IncludedSegments { get; set; }
 
+        ///<summary>
+        /// Schedule notification for future delivery.
+        ///Examples: All examples are the exact same date & time.
+        ///"Thu Sep 24 2015 14:00:00 GMT-0700 (PDT)"
+        ///"September 24th 2015, 2:00:00 pm UTC-07:00"
+        ///"2015-09-24 14:00:00 GMT-0700"
+        ///"Sept 24 2015 14:00:00 GMT-0700"
+        ///"Thu Sep 24 2015 14:00:00 GMT-0700 (Pacific Daylight Time)"
+        /// </summary>
+        [JsonProperty("send_after")]
+        public string SendAfter { get; set; }
+
         /// <summary>
         /// Sets the web push notification's icon. 
         /// An image URL linking to a valid image. 

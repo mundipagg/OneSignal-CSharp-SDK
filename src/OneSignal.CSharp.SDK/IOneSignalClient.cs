@@ -6,7 +6,6 @@ namespace OneSignal.CSharp.SDK
     public interface IOneSignalClient
     {
         IDevicesResource Devices { get; }
-
         INotificationsResource Notifications { get; }
     }
 }

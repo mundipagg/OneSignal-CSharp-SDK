@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OneSignal.CSharp.SDK</RootNamespace>
     <AssemblyName>OneSignal.CSharp.SDK</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,7 +36,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.105.2.3\lib\net452\RestSharp.dll</HintPath>
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,6 +50,10 @@
     <Compile Include="IOneSignalClient.cs" />
     <Compile Include="OneSignalClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\App\AppAddResult.cs" />
+    <Compile Include="Resources\App\AppCreateOptions.cs" />
+    <Compile Include="Resources\App\AppResource.cs" />
+    <Compile Include="Resources\App\IAppResource.cs" />
     <Compile Include="Resources\BaseResource.cs" />
     <Compile Include="Resources\Devices\DeviceAddOptions.cs" />
     <Compile Include="Resources\Devices\DeviceAddResult.cs" />
@@ -58,6 +63,8 @@
     <Compile Include="Resources\Devices\TestTypeEnum.cs" />
     <Compile Include="Resources\LanguageCodes.cs" />
     <Compile Include="Resources\Notifications\INotificationsResource.cs" />
+    <Compile Include="Resources\Notifications\NotificationCancelOptions.cs" />
+    <Compile Include="Resources\Notifications\NotificationCancelResult.cs" />
     <Compile Include="Resources\Notifications\NotificationCreateOptions.cs" />
     <Compile Include="Resources\Notifications\NotificationCreateResult.cs" />
     <Compile Include="Resources\Devices\IDevicesResource.cs" />
@@ -68,9 +75,7 @@
     <Compile Include="Resources\Notifications\NotificationFilterOperator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
