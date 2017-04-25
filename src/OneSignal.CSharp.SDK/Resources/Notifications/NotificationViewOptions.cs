@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using Newtonsoft.Json.Converters;
 
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Get delivery and convert report about single notification.
@@ -24,7 +22,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// </summary>
         [JsonProperty("id")]
         public Guid Id { get; set; }
-
 
     }
 }

@@ -1,5 +1,5 @@
-﻿using OneSignal.CSharp.SDK.Resources.Devices;
-using OneSignal.CSharp.SDK.Resources.Notifications;
+﻿using OneSignal.Resources.Devices;
+using OneSignal.Resources.Notifications;
 
 namespace OneSignal.CSharp.SDK
 {

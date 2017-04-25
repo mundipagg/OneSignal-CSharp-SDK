@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using RestSharp.Deserializers;
 
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Delivery and convert report result refered to single notification.
@@ -41,7 +40,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("remaining")]
         public int Remaining { get; set; }
 
-
         /// <summary>
         /// The number of remaining devices where notification will be delivered
         /// </summary>
@@ -75,7 +73,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         [JsonProperty("contents")]
         [JsonExtensionData]
         public Dictionary<string, string> Contents { get; set; }
-        
+
         /// <summary><br/>
         /// The notification's title, a map of language codes to text for each language.<br/>
         /// Each hash must have a language code string for a key, mapped to the localized text you would like users to receive for that language.<br/>

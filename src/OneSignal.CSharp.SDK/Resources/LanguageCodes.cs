@@ -1,4 +1,4 @@
-﻿namespace OneSignal.CSharp.SDK.Resources
+﻿namespace OneSignal.Resources
 {
     /// <summary>
     /// Language codes constants for supported languages.
@@ -9,7 +9,7 @@
         /// <summary>
         /// Language code for English language.
         /// </summary>		
-        public const string English="en";
+        public const string English = "en";
 
         /// <summary>
         /// Language code for Arabic language.
@@ -21,15 +21,15 @@
         /// </summary>		
         public const string Catalan = "ca";
 
-/// <summary>
-/// Language code for Chinese(Simplified) language.
-/// </summary>		
-public const string ChineseSimplified = "zh-Hans";
+        /// <summary>
+        /// Language code for Chinese(Simplified) language.
+        /// </summary>		
+        public const string ChineseSimplified = "zh-Hans";
 
-/// <summary>
-/// Language code for Chinese(Traditional) language.
-/// </summary>		
-public const string ChineseTraditional = "zh-Hant";
+        /// <summary>
+        /// Language code for Chinese(Traditional) language.
+        /// </summary>		
+        public const string ChineseTraditional = "zh-Hant";
 
         /// <summary>
         /// Language code for Croatian language.

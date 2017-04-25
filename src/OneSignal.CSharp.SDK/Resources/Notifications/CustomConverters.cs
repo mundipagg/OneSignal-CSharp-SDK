@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Globalization;
-using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     #region CustomDateTimeConverter
     /// <summary>

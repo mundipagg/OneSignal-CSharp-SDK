@@ -1,6 +1,6 @@
 ﻿using RestSharp.Deserializers;
 
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Result of notification create operation.

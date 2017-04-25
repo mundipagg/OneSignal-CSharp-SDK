@@ -1,8 +1,8 @@
 ﻿using System;
-using OneSignal.CSharp.SDK.Serializers;
+using OneSignal.Serializers;
 using RestSharp;
 
-namespace OneSignal.CSharp.SDK.Resources.Devices
+namespace OneSignal.Resources.Devices
 {
     /// <summary>
     /// Implementation of BaseResource, used to help client add or edit device.

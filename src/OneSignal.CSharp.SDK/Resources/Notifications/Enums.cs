@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RestSharp.Deserializers;
-
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+﻿namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Types of visibility for apps targeting Android API level 21+ running on Android 5.0+ devices.
