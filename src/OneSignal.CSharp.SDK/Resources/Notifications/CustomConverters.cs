@@ -489,7 +489,12 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// <summary>
         /// Defines if converter can be used for deserialization.
         /// </summary>
-        public override bool CanRead => true;
+        public override bool CanRead {
+            get
+            {
+                return true;
+            }
+        } 
 
         /// <summary>
         /// Defines if converter can be used for serialization.
