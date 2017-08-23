@@ -28,6 +28,6 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// </summary>
         [JsonProperty("errors")]
         [JsonConverter(typeof(NotificationCreateResultJsonConverter))]
-        public NotificationErrorResult Error { get; set; } = new NotificationErrorResult();
+        public NotificationErrorResult Error { get; set; }
     }
 }
