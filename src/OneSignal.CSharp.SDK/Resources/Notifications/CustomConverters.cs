@@ -445,11 +445,11 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
             else
             {
                 var subToken = token.FirstOrDefault();
-                if (subToken?.Type == JTokenType.Property)
+                if (subToken != null && subToken.Type == JTokenType.Property)
                 {
                     var arrayToken = subToken.FirstOrDefault();
 
-                    if (arrayToken?.Type == JTokenType.Array)
+                    if (arrayToken != null && arrayToken.Type == JTokenType.Array)
                     {
                         var listOfInvalidIds = new List<string>();
                         foreach (var jValue in arrayToken.Values<string>())
@@ -468,7 +468,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
             return new NotificationErrorResult()
             {
-                InvalidPlayerIds = {},
+                InvalidPlayerIds = null,
                 ErrorResultType = ErrorResultTypeEnum.None
             }; 
         }
