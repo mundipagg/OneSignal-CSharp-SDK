@@ -1,3 +1,9 @@
+### 0.10 2017-04-11
+
+ * Notification report
+ * Cancel notification
+ * Stop a schedule or currently outgoing notification
+
 ### 0.9 2017-01-27
 
  * Completed missing XML documentation

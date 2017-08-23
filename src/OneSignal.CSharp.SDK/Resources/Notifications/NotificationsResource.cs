@@ -83,5 +83,34 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
 
             return restResponse.Data;
         }
+
+        /// <summary>
+        /// Cancel a notification scheduled by the OneSignal system
+        /// </summary>
+        /// <param name="options">Options used for notification cancel operation.</param>
+        /// <returns></returns>
+        public NotificationCancelResult Cancel(NotificationCancelOptions options)
+        {
+            RestRequest restRequest = new RestRequest("notifications/" + options.Id, Method.DELETE);
+
+            restRequest.AddHeader("Authorization", string.Format("Basic {0}", base.ApiKey));
+
+            restRequest.AddParameter("app_id", options.AppId);
+
+            restRequest.RequestFormat = DataFormat.Json;
+
+            IRestResponse<NotificationCancelResult> restResponse = base.RestClient.Execute<NotificationCancelResult>(restRequest);
+
+            if (restResponse.ErrorException != null)
+            {
+                throw restResponse.ErrorException;
+            }
+            else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
+            {
+                throw new Exception(restResponse.Content);
+            }
+
+            return restResponse.Data;
+        }
     }
 }
