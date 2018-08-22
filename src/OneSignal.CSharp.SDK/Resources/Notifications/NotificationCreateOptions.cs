@@ -386,6 +386,14 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         public string AndroidGroup { get; set; }
 
         /// <summary><br/>
+        /// The Android Oreo Notification Category to send the notification under.<br/>
+        /// More info <see cref="!:https://documentation.onesignal.com/docs/android-notification-categories">here</see>.<br/>
+        /// Platforms: Android<br/>
+        /// </summary>
+        [JsonProperty("android_channel_id")]
+        public string AndroidCategory { get; set; }
+
+        /// <summary><br/>
         /// Summary message to display when 2+ notifications are stacked together. Default is "# new messages".<br/>
         /// Include $[notif_count] in your message and it will be replaced with the current number.<br/>
         /// Languages - The value of each key is the message that will be sent to users for that language. "en" (English) is required.<br/>
