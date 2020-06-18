@@ -397,4 +397,114 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         }
     }
     #endregion
+
+    #region NotificationCreateResultJsonConverter
+    /// <summary>
+    /// Converter used to properly deserialize NotificationCreateResult
+    /// </summary>
+    public class NotificationCreateResultJsonConverter : StringEnumConverter
+    {
+        /// <summary>
+        /// Deserializes object
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <param name="objectType"></param>
+        /// <param name="existingValue"></param>
+        /// <param name="serializer"></param>
+        /// <returns></returns>
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            var isNullable = (Nullable.GetUnderlyingType(objectType) != null);
+
+            if (reader.TokenType == JsonToken.Null)
+            {
+                if (!isNullable)
+                    throw new JsonSerializationException();
+                return null;
+            }
+
+            var token = JToken.Load(reader);
+            if (token.Type == JTokenType.Array)
+            {
+                var subToken = token.FirstOrDefault();
+
+                if (subToken.Value<string>().Contains("All included players are not subscribed"))
+                    return new NotificationErrorResult()
+                    {
+                        InvalidPlayerIds = null,
+                        ErrorResultType = ErrorResultTypeEnum.HasAllInvalidPlayerIds
+                    };
+
+                if (subToken.Value<string>().Contains("Notification content must not be null for any languages"))
+                    return new NotificationErrorResult()
+                    {
+                        InvalidPlayerIds = null,
+                        ErrorResultType = ErrorResultTypeEnum.NotificationContentEmpty
+                    };
+            }
+            else
+            {
+                var subToken = token.FirstOrDefault();
+                if (subToken != null && subToken.Type == JTokenType.Property)
+                {
+                    var arrayToken = subToken.FirstOrDefault();
+
+                    if (arrayToken != null && arrayToken.Type == JTokenType.Array)
+                    {
+                        var listOfInvalidIds = new List<string>();
+                        foreach (var jValue in arrayToken.Values<string>())
+                        {
+                            listOfInvalidIds.Add(jValue);
+                        }
+
+                        return new NotificationErrorResult()
+                        {
+                            InvalidPlayerIds = listOfInvalidIds.ToArray(),
+                            ErrorResultType = ErrorResultTypeEnum.HasInvalidPlayerIds
+                        };
+                    }
+                }
+            }
+
+            return new NotificationErrorResult()
+            {
+                InvalidPlayerIds = null,
+                ErrorResultType = ErrorResultTypeEnum.None
+            }; 
+        }
+
+        /// <summary>
+        /// Serializes object
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="value"></param>
+        /// <param name="serializer"></param>
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            var array = new JArray {""};
+            var token = array.Single(); 
+            token.WriteTo(writer);
+        }
+
+        /// <summary>
+        /// Defines if converter can be used for deserialization.
+        /// </summary>
+        public override bool CanRead {
+            get
+            {
+                return true;
+            }
+        } 
+
+        /// <summary>
+        /// Defines if converter can be used for serialization.
+        /// </summary>
+        /// <param name="objectType"></param>
+        /// <returns></returns>
+        public override bool CanConvert(Type objectType)
+        {
+            return false;
+        }
+    }
+    #endregion
 }

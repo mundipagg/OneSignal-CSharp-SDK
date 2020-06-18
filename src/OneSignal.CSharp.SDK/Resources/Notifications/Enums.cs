@@ -147,4 +147,31 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// </summary>
         Email
     }
+
+    /// <summary>
+    /// Helps distinguish the type of NotificationCreateResult, so that you can be given a proper result information.
+    /// </summary>
+    public enum ErrorResultTypeEnum
+    {
+        /// <summary>
+        /// There was no error in notification create request.
+        /// </summary>
+        None,
+
+        /// <summary>
+        /// Notification content must not be null for any languages.
+        /// </summary>
+        NotificationContentEmpty,
+
+        /// <summary>
+        /// Returned if some used include_player_ids are valid, and some are not.
+        /// Please process these on your server and remove them from your database if you are track them.
+        /// </summary>
+        HasInvalidPlayerIds,
+
+        /// <summary>
+        /// All included players are not subscribed
+        /// </summary>
+        HasAllInvalidPlayerIds
+    }
 }
