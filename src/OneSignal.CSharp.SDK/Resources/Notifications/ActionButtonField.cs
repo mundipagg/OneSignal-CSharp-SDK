@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Class used to describe action field.

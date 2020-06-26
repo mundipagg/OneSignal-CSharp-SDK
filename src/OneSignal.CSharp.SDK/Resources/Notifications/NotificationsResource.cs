@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
-using OneSignal.CSharp.SDK.Serializers;
+using OneSignal.Serializers;
 using RestSharp;
 
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Class used to define resources needed for client to manage notifications.

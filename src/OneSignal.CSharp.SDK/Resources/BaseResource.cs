@@ -1,6 +1,6 @@
 ﻿using RestSharp;
 
-namespace OneSignal.CSharp.SDK.Resources
+namespace OneSignal.Resources
 {
     /// <summary>
     /// Abstract class which helps easier implementation of new client resources.

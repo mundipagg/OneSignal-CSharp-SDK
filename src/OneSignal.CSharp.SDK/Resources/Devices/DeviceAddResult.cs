@@ -1,6 +1,6 @@
 ﻿using RestSharp.Deserializers;
 
-namespace OneSignal.CSharp.SDK.Resources.Devices
+namespace OneSignal.Resources.Devices
 {
     /// <summary>
     /// Class used to keep result of device add operation.

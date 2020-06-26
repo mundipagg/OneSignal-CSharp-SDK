@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OneSignal.CSharp.SDK.Resources.Devices
+namespace OneSignal.Resources.Devices
 {
     /// <summary>
     /// Interface used to unify creation of classes used to help client add or edit device.

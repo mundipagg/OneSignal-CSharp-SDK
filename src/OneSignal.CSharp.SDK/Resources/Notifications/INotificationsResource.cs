@@ -1,4 +1,4 @@
-namespace OneSignal.CSharp.SDK.Resources.Notifications
+namespace OneSignal.Resources.Notifications
 {
     /// <summary>
     /// Interface used to unify Notification Resource classes.
@@ -18,7 +18,7 @@ namespace OneSignal.CSharp.SDK.Resources.Notifications
         /// <param name="options">This parameter contains the information required to cancel a scheduled notification</param>
         /// <returns>Returns result of notification cancel operation.</returns>
         NotificationCancelResult Cancel(NotificationCancelOptions options);
-      
+
         /// <summary>
         /// Get report about notification
         /// </summary>

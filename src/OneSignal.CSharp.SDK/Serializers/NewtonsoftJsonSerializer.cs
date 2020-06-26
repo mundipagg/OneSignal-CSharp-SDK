@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using RestSharp.Serializers;
 
-namespace OneSignal.CSharp.SDK.Serializers
+namespace OneSignal.Serializers
 {
     /// <summary>
     /// Custom implementation to Json serializer in order to comply with REST Sharp requirements.

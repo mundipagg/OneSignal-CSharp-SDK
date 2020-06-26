@@ -1,4 +1,4 @@
-﻿namespace OneSignal.CSharp.SDK.Resources.Devices
+﻿namespace OneSignal.Resources.Devices
 {
     /// <summary>
     /// Device types enum.

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace OneSignal.CSharp.SDK.Resources.Devices
+namespace OneSignal.Resources.Devices
 {
     /// <summary>
     /// Options for adding new device to OneSignal app.
