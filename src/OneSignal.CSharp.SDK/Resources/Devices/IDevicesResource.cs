@@ -21,5 +21,12 @@ namespace OneSignal.CSharp.SDK.Resources.Devices
         /// <param name="options">Options used to modify attributes of the device.</param>
         /// <exception cref="Exception"></exception>
         void Edit(string id, DeviceEditOptions options);
-    }
+
+		/// <summary>
+		/// View the details of an existing device in one of your OneSignal apps
+		/// </summary>
+		/// <param name="id">Player's OneSignal ID</param>
+		/// <returns></returns>
+		DeviceViewResult View(string id);
+	}
 }

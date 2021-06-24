@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using OneSignal.CSharp.SDK.Serializers;
 using RestSharp;
 
@@ -68,5 +69,37 @@ namespace OneSignal.CSharp.SDK.Resources.Devices
                 throw restResponse.ErrorException;
             }
         }
-    }
+
+
+		/// <summary>
+		/// View the details of an existing device in one of your OneSignal apps
+		/// </summary>
+		/// <param name="id">Player's OneSignal ID</param>
+		/// <returns></returns>
+		public DeviceViewResult View(string id)
+		{
+			var baseRequestPath = "players/{0}";
+
+			RestRequest restRequest = new RestRequest(string.Format(baseRequestPath, id), Method.GET);
+
+			restRequest.AddHeader("Authorization", string.Format("Basic {0}", base.ApiKey));
+
+			restRequest.RequestFormat = DataFormat.Json;
+			restRequest.JsonSerializer = new NewtonsoftJsonSerializer();
+
+			IRestResponse<DeviceViewResult> restResponse = base.RestClient.Execute<DeviceViewResult>(restRequest);
+
+			if (restResponse.ErrorException != null)
+			{
+				throw restResponse.ErrorException;
+			}
+			else if (restResponse.StatusCode != HttpStatusCode.OK && restResponse.Content != null)
+			{
+				throw new Exception(restResponse.Content);
+			}
+
+			return restResponse.Data;
+		}
+
+	}
 }
